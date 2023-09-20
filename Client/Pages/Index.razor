@@ -1,9 +1,12 @@
 ﻿@page "/"
 
+@inject IJSRuntime JS
+@implements IDisposable
+
 <PageTitle>Index</PageTitle>
 
 <!-- ======= Hero Section ======= -->
-<section id="hero" class="d-flex flex-column justify-content-center">
+<section id="hero" class="d-flex flex-column justify-content-center" >
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-xl-8">
@@ -77,6 +80,62 @@
           </div>
         </div>
 
-      
+        <h3>ggggg</h3>
+    <button @onclick="GoToTop">Test</button>
+
     </section><!-- End About Us Section -->
 
+
+
+
+@code {
+
+    //ElementReference hero;
+
+    //DotNetObjectReference<Index> selfReference;
+
+
+    private IJSObjectReference? _jsModule;
+
+
+    protected override void OnInitialized()
+    {
+
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        _jsModule = await JS.InvokeAsync<IJSObjectReference>("import", "./js/helper.js");
+
+        if (_jsModule!=null)
+        {
+            AttachScrollListener();
+        }
+    }
+
+    async Task GoToTop()
+    {
+        await _jsModule.InvokeVoidAsync("ScrollToTop");
+    }
+
+    async Task AttachScrollListener()
+    {
+        //selfReference = DotNetObjectReference.Create(this);
+        var minInterval = 500; // Only notify every 500 ms
+        await _jsModule.InvokeVoidAsync("onDivScroll2", minInterval);
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+
+        }
+    }
+
+    public void Dispose()
+    {
+        
+    }
+
+}

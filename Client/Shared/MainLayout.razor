@@ -1,7 +1,7 @@
 ﻿@inherits LayoutComponentBase
 
 <!-- ======= Header ======= -->
-<header id="header" class="fixed-top ">
+<header id="header" class="fixed-top" >
     <div class="container-fluid">
 
         <div class="row justify-content-center">
@@ -62,7 +62,10 @@
     </div>
 </header><!-- End Header -->
 
+
+
  @Body
+
 
 @code {
     private bool collapseNavMenu = true;
@@ -70,6 +73,8 @@
     private string? NavMenuCssClass => collapseNavMenu ? null : "navbar-mobile";
 
     private string @CloseMenuCssClass => collapseNavMenu ? "d-none" : "d-flex";
+
+    private int counter;
 
     private void ToggleNavMenu()
     {
@@ -81,4 +86,11 @@
         if (collapseNavMenu == false)
             collapseNavMenu = true;
     }
+
+   
+    private void OnScroll()
+    {
+        counter++;
+    }
+  
 }
