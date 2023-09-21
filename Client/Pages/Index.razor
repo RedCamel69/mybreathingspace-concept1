@@ -80,12 +80,66 @@
           </div>
         </div>
 
-        <h3>ggggg</h3>
-    <button @onclick="GoToTop">Test</button>
+    <a id="back-to-top" onclick="GoToTop" class="btn btn-light btn-lg back-to-top" role="button"><i class="bi bi-chevron-up">grr</i></a>
+       
 
     </section><!-- End About Us Section -->
+<!-- ======= Faq Section ======= -->
+<section id="faq" class="faq">
+    <div class="container-fluid">
 
+        <div class="row">
 
+            <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
+
+                <div class="content">
+                    <h3>Frequently Asked <strong>Questions</strong></h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
+                    </p>
+                </div>
+
+                <div class="accordion-list">
+                    <ul>
+                        <li>
+                            <a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-1">Is Mindfulness just a fad? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></a>
+                            <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
+                                <p>
+                                    It is doubtful that mindfulness will disappear anytime soon. Mindfulness has been mocked, for example, in adult Ladybird books, but it has a large evidence base.
+
+                                    In the late 1990s, there was an increase in research into the effectiveness of MBSR courses. It has been shown to alleviate distress in those experiencing depression and anxiety. Participants in MBSR courses reported being better able to cope with and manage stress. (Biegel et al 2009; Beal et al 2012).
+                                </p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2" class="collapsed">Feugiat scelerisque varius morbi enim nunc? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></a>
+                            <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
+                                <p>
+                                    Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+                                </p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <a data-bs-toggle="collapse" data-bs-target="#accordion-list-3" class="collapsed">Dolor sit amet consectetur adipiscing elit? <i class="bi bi-chevron-down icon-show"></i><i class="bi-chevron-up bi icon-close"></i></a>
+                            <div id="accordion-list-3" class="collapse" data-bs-parent=".accordion-list">
+                                <p>
+                                    Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
+                                </p>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img" style='background-image: url("img/faq.jpg");'>&nbsp;</div>
+        </div>
+
+    </div>
+</section><!-- End Faq Section -->
 
 
 @code {
