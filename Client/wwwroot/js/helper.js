@@ -22,7 +22,7 @@ export function ScrollToTop() {
 
 export function onDivScroll2(interval) {
     let selectHeader = document.getElementById('header');
-    let selectBackToTop = document.getElementById('back-to-top')';
+    let selectBackToTop = document.getElementById('back-to-top');
     window.addEventListener('scroll', function (e) {       
        
         if (selectHeader) {
