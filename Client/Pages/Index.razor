@@ -1,4 +1,5 @@
 ﻿@page "/"
+@page "/home"
 
 @inject IJSRuntime JS
 @implements IDisposable
@@ -26,63 +27,65 @@
 
         <div class="section-title">
           <h2>What is Mindfulness?</h2>
-          <p>‘Mindfulness is the awareness that emerges through paying attention on purpose, in the present moment, and non-judgementally, to things as they are.’
-
-            Williams, Teasdale, Segal, and Kabat-Zinn 2007</p>
         </div>
 
         <div class="row content">
+
+            <p>
+                <strong>‘Mindfulness is the awareness that emerges through paying attention on purpose, in the present moment, and non-judgementally, to things as they are.’
+
+                    Williams, Teasdale, Segal, and Kabat-Zinn 2007
+                </strong>
+            </p>
+
+            <Modal @ref="modal" title="What Is Mindfulness?" Fullscreen="ModalFullscreen.Always">
+                <BodyTemplate>
+
+                    <iframe style="    position: relative;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;" src="https://www.youtube.com/embed/NbizmVKHdgs?si=a9HSH_Qm-sr1UNqL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+                </BodyTemplate>
+                <FooterTemplate>
+                    <Button Color="ButtonColor.Secondary" @onclick="OnHideModalClick">Close</Button>
+                   @* <Button Color="ButtonColor.Primary">Save changes</Button>*@
+                </FooterTemplate>
+            </Modal>
+
+           
+
           <div class="col-lg-12">
             <p>
               We have all experienced mindfulness; for example, when we are focused on something we enjoy such as sewing, playing a sport we love or a walk on a beautiful summer day. It is when time seems to have no meaning and you are fully and completely engaged in the present moment. These conditions make us feel fully alive and whole, but at times of difficulty and external pressures we fail to find this more helpful state of mind. Instead, many of us harm ourselves by the way we think about the challenges we face. We spend time and energy worrying about what might happen in the future or ruminating over things that have happened in the past.
             </p>
             <p>
-              <a href="https://youtu.be/NbizmVKHdgs" class="glightbox play-btn mb-4 btn-learn-more">Learn More</a>
+                    @*<a href="https://youtu.be/NbizmVKHdgs" class="glightbox play-btn mb-4 btn-learn-more">Learn More</a>*@
+                    <Button class="play-btn mb-4 btn-learn-more" @onclick="OnShowModalClick">Learn More</Button>
             </p>
-            <ul>
-              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
-              <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
-              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
-            </ul>
-          </div>
-
-          <div class="col-lg-6 pt-4 pt-lg-0">
             <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
+                    The MBSR course offers a solution by gently encouraging us to live more often in the present moment. Mindfulness practice does not invalidate our worries or concerns, but rather it allows us to take a break from them.
             </p>
-            <a href="#" class="btn-learn-more">Learn More</a>
-          </div>
+
+            <p>
+                    During the MBSR course we will also consider how to explore our difficulties as they emerge in the present moment, accept them and begin to think about how we might deal with them differently.
+            </p>
+
+@*            <ul>
+              <li><i class="ri-check-double-line"></i> List 1</li>
+            </ul>
+*@
+            </div>
+
+     
 
         </div>
-          <div class="col-lg-6">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
-            </p>
-            <p>
-              <a href="https://youtu.be/NbizmVKHdgs" class="glightbox play-btn mb-4 btn-learn-more">Learn More</a>
-            </p>
-            <ul>
-              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
-              <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
-              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
-            </ul>
-          </div>
-          <div class="col-lg-6 pt-4 pt-lg-0">
-            <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-            <a href="#" class="btn-learn-more">Learn More</a>
-          </div>
+         
+          
         </div>
-
-    <a id="back-to-top" @onclick="GoToTop" class="btn btn-light btn-lg back-to-top" role="button"><i class="bi bi-chevron-up">grr</i></a>
-       
-
     </section><!-- End About Us Section -->
 
 <!-- ======= Faq Section ======= -->
@@ -114,19 +117,34 @@
                         </li>
 
                         <li>
-                            <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2" class="collapsed">Feugiat scelerisque varius morbi enim nunc? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></a>
+                            <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2" class="collapsed">Is Mindfulness Buddhism?<i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></a>
                             <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
                                 <p>
-                                    Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+                                    Mindfulness has its foundations in Buddhism, but the MBSR is a western secular course. It simply teaches meditation designed to allow us to become more aware of ourselves as human beings. It does not teach Buddhism and people from all faiths and cultures are welcome.
                                 </p>
                             </div>
                         </li>
 
                         <li>
-                            <a data-bs-toggle="collapse" data-bs-target="#accordion-list-3" class="collapsed">Dolor sit amet consectetur adipiscing elit? <i class="bi bi-chevron-down icon-show"></i><i class="bi-chevron-up bi icon-close"></i></a>
+                            <a data-bs-toggle="collapse" data-bs-target="#accordion-list-3" class="collapsed">What will an MBSR course do for me?<i class="bi bi-chevron-down icon-show"></i><i class="bi-chevron-up bi icon-close"></i></a>
                             <div id="accordion-list-3" class="collapse" data-bs-parent=".accordion-list">
                                 <p>
-                                    Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
+                                    The MBSR course should not be used as a substitute for medical care because it is not intended to treat or replace therapy or medical care. It seeks to be preventative and may be therapeutic for those who experience stress, common aches and pains, migraines, and other illnesses. Participants on MBSR courses have reported feeling more alive, and more "in-tune" with themselves and others.
+                                </p>
+                                <p>Through this MBSR course, you will learn skills that may increase your ability to:</p>
+                                <ul>
+                                    <li><i class="ri-check-double-line"></i> Cope with stress, pain, and the challenges of everyday life</li>
+                                    <li><i class="ri-check-double-line"></i> Deal with difficult events with grace and composure</li>
+                                    <li><i class="ri-check-double-line"></i> Be fully present and alive in this moment</li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li>
+                            <a data-bs-toggle="collapse" data-bs-target="#accordion-list-3" class="collapsed">Can I practise at home?<i class="bi bi-chevron-down icon-show"></i><i class="bi-chevron-up bi icon-close"></i></a>
+                            <div id="accordion-list-3" class="collapse" data-bs-parent=".accordion-list">
+                                <p>
+                                    Mindfulness is like any other learning experience; unless it is practised on a regular basis it is unlikely to be beneficial. Home practice will be provided, but can be adapted to suit each person’s individual’s lifestyle. The homework is designed to be enjoyable.
                                 </p>
                             </div>
                         </li>
@@ -177,45 +195,53 @@
                     3rd April 2023
               </p>
             </div>
+           
+        </div>
+       
+    </div>
 
-            <div class="col-lg-6 pt-4 pt-lg-0">
-                <p>
-                    Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                    velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                    culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-                <a href="#" class="btn-learn-more">Learn More</a>
+   
+
+</section><!-- End About Jean Section -->
+<!-- ======= Counts Section ======= -->
+<section id="counts" class="counts">
+    <div class="container">
+
+        <div class="text-center title">
+            <h3>Our story so far...</h3>
+            <p>Iusto et labore modi qui sapiente xpedita tempora et aut non ipsum consequatur illo.</p>
+        </div>
+
+        <div class="row counters position-relative">
+
+            <div class="col-lg-3 col-6 text-center">
+                <span data-purecounter-start="0" data-purecounter-end="12" data-purecounter-duration="1" class="purecounter">12</span>
+                <p>Clients</p>
+            </div>
+
+            <div class="col-lg-3 col-6 text-center">
+                <span data-purecounter-start="0" data-purecounter-end="2" data-purecounter-duration="1" class="purecounter">2</span>
+                <p>Courses</p>
+            </div>
+
+            <div class="col-lg-3 col-6 text-center">
+                <span data-purecounter-start="0" data-purecounter-end="9" data-purecounter-duration="1" class="purecounter">9</span>
+                <p>Workshops</p>
+            </div>
+
+            <div class="col-lg-3 col-6 text-center">
+                <span data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="1" class="purecounter">10</span>
+                <p>Years of Experience</p>
             </div>
 
         </div>
-        <div class="col-lg-6">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua.
-            </p>
-            <p>
-                <a href="https://youtu.be/NbizmVKHdgs" class="glightbox play-btn mb-4 btn-learn-more">Learn More</a>
-            </p>
-            <ul>
-                <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
-                <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
-                <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
-            </ul>
-        </div>
-        <div class="col-lg-6 pt-4 pt-lg-0">
-            <p>
-                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-            <a href="#" class="btn-learn-more">Learn More</a>
-        </div>
+
     </div>
+</section><!-- End Counts Section -->
 
-    <a id="back-to-top" @onclick="GoToTop" class="btn btn-light btn-lg back-to-top" role="button"><i class="bi bi-chevron-up">grr</i></a>
+<a id="back-to-top" @onclick="GoToTop" class="btn btn-light btn-lg back-to-top" role="button"><i class="bi bi-chevron-up">grr</i></a>
 
 
-</section><!-- End About Jean Section -->
 @code {
 
     //ElementReference hero;
@@ -225,6 +251,7 @@
 
     private IJSObjectReference? _jsModule;
 
+    private Modal modal;
 
     protected override void OnInitialized()
     {
@@ -266,4 +293,13 @@
         
     }
 
+    private async Task OnShowModalClick()
+    {
+        await modal?.ShowAsync();
+    }
+
+    private async Task OnHideModalClick()
+    {
+        await modal?.HideAsync();
+    }
 }

@@ -37,6 +37,20 @@ export function onDivScroll2(interval) {
     }, interval);
 }
 
+export function onContentPageScroll(interval) {
+    let selectBackToTop = document.getElementById('back-to-top');
+    window.addEventListener('scroll', function (e) {
+
+        if (selectBackToTop) {
+            if (window.scrollY > 100) {
+                selectBackToTop.classList.add('active');
+            } else {
+                selectBackToTop.classList.remove('active');
+            }
+        }
+    }, interval);
+}
+
 export function ToggleShow() {
     var x = document.getElementById('week4-additional-notes');
     if (x.style.display === "none") {

@@ -752,6 +752,35 @@ section {
             color: #009961;
         }
 
+
+/*.services .accordion-list .icon-show {
+    display: none;
+}
+
+.services .accordion-list a.collapsed {
+    color: #343a40;
+}
+
+    .services .accordion-list a.collapsed:hover {
+        color: #009961;
+    }*/
+
+    .services a.collapsed .icon-show {
+        display: inline-block;
+    }
+
+    .services a.collapsed .icon-close {
+        display: none;
+    }
+
+.services a .icon-close {
+    display: inline-block;
+}
+
+.services a .icon-show {
+    display: none;
+}
+
 /*--------------------------------------------------------------
 # Cta
 --------------------------------------------------------------*/
