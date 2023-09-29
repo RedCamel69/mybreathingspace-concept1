@@ -4,6 +4,8 @@
 @inject IJSRuntime JS
 @implements IDisposable
 
+@using BlazorApp.Shared
+
 <PageTitle>Index</PageTitle>
 
 <!-- ======= Hero Section ======= -->
@@ -38,10 +40,22 @@
                 </strong>
             </p>
 
-            <Modal @ref="modal" title="What Is Mindfulness?" Fullscreen="ModalFullscreen.Always">
-                <BodyTemplate>
 
-                    <iframe style="    position: relative;
+            
+            @if (showModal)
+            {
+                <div class="modal  fade show" tabindex="-1" role="dialog" style="display: block;">
+                    <div class="modal-dialog modal-fullscreen" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">An Introduction To Mindfulness</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close" @onclick="@(() => { showModal = false; })">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                               @* <p>Modal body text goes here.</p>*@
+                                <iframe style="    position: relative;
     right: 0;
     bottom: 0;
     min-width: 100%;
@@ -49,14 +63,20 @@
     width: auto;
     height: auto;" src="https://www.youtube.com/embed/NbizmVKHdgs?si=a9HSH_Qm-sr1UNqL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-                </BodyTemplate>
-                <FooterTemplate>
-                    <Button Color="ButtonColor.Secondary" @onclick="OnHideModalClick">Close</Button>
-                   @* <Button Color="ButtonColor.Primary">Save changes</Button>*@
-                </FooterTemplate>
-            </Modal>
+                            </div>
+                            <div class="modal-footer">
+                               @* <button type="button" class="btn btn-primary">Save changes</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+            <hr />
+          
 
-           
+
+        
 
           <div class="col-lg-12">
             <p>
@@ -64,7 +84,7 @@
             </p>
             <p>
                     @*<a href="https://youtu.be/NbizmVKHdgs" class="glightbox play-btn mb-4 btn-learn-more">Learn More</a>*@
-                    <Button class="play-btn mb-4 btn-learn-more" @onclick="OnShowModalClick">Learn More</Button>
+                    <Button class="play-btn mb-4 btn-learn-more" @onclick="@(() => { showModal = true; })">Learn More</Button>
             </p>
             <p>
                     The MBSR course offers a solution by gently encouraging us to live more often in the present moment. Mindfulness practice does not invalidate our worries or concerns, but rather it allows us to take a break from them.
@@ -253,6 +273,8 @@
 
     private Modal modal;
 
+    bool showModal = false;
+
     protected override void OnInitialized()
     {
 
@@ -293,13 +315,5 @@
         
     }
 
-    private async Task OnShowModalClick()
-    {
-        await modal?.ShowAsync();
-    }
-
-    private async Task OnHideModalClick()
-    {
-        await modal?.HideAsync();
-    }
+  
 }
