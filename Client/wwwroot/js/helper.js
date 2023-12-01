@@ -69,6 +69,25 @@ export function saveFile(file, Content) {
     document.body.removeChild(link);
 }
 
+export function onLoadScrollToWhatIsMindfulness() {
+
+    try {
+        document.getElementById('whatismindfulness').scrollIntoView({ behavior: 'smooth' });
+    }
+    catch (err) {
+        console.log(err);
+    }
+}
+
+export function onLoadScrollToAboutJean() {
+
+    try {
+        document.getElementById('aboutjean').scrollIntoView({ behavior: 'smooth' });
+    }
+    catch (err) {
+        console.log(err);
+    }
+}
 
 //// Get the button:
 //let mybutton = document.getElementById("myBtn");

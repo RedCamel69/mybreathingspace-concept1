@@ -118,14 +118,15 @@ h6 {
     position: fixed;
     visibility: hidden;
     opacity: 0;
-    right: 15px;
-    bottom: 15px;
+    right: 2vw;
+    bottom: 2vw;
     z-index: 996;
     background: #009961;
     width: 40px;
     height: 40px;
     border-radius: 50px;
     transition: all 0.4s;
+    padding:0.3em;
 }
 
     .back-to-top i {
@@ -905,13 +906,13 @@ section {
 # Counts
 --------------------------------------------------------------*/
 .counts {
-    background: url("../img/counts-bg.jpg") center center no-repeat;
+    background: url("../img/Tranquillity.webp") center center no-repeat;
     background-size: cover;
     padding: 80px 0 60px 0;
     position: relative;
 }
 
-    .counts::before {
+   /* .counts::before {
         content: "";
         position: absolute;
         background: rgba(17, 17, 17, 0.9);
@@ -919,7 +920,7 @@ section {
         right: 0;
         top: 0;
         bottom: 0;
-    }
+    }*/
 
     .counts .title {
         position: relative;
@@ -1562,24 +1563,28 @@ section {
     }
 
         #footer .social-links a {
-            font-size: 18px;
+            font-size: 2em;
+            color: #fff;
+            /*font-size: 18px;
             display: inline-block;
             background: #009961;
             color: #fff;
-            line-height: 1;
-            padding: 8px 0;
-            margin-right: 4px;
+            line-height: 1;*/
+            /* padding: 8px 0;*/
+            /*margin-right: 4px;
             border-radius: 50%;
             text-align: center;
             width: 36px;
-            height: 36px;
+            height: 36px;*/
             transition: 0.3s;
         }
 
             #footer .social-links a:hover {
-                background: #00b371;
-                color: #fff;
+                /*background: #00b371;*/
+                color: #009961;
+               
                 text-decoration: none;
+               /* font-size: 2.2em;*/
             }
 
     #footer .copyright {

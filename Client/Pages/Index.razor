@@ -2,6 +2,8 @@
 @page "/home"
 
 @inject IJSRuntime JS
+@inject NavigationManager Navigation;
+
 @implements IDisposable
 
 @using BlazorApp.Shared
@@ -25,7 +27,8 @@
 
 <!-- ======= WhatIsMindfulness Section ======= -->
 <section id="whatismindfulness" class="about scrollspy-example" data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="0" tabindex="0" style="background-color:white">
-      <div class="container">
+    <a name="whatismindfulness2" id="whatismindfulness2"></a>
+    <div class="container">
 
         <div class="section-title">
           <h2>What is Mindfulness?</h2>
@@ -40,9 +43,9 @@
                 </strong>
             </p>
 
+           
 
-            
-            @if (showModal)
+          @*   @if (showModal)
             {
                 <div class="modal  fade show" tabindex="-1" role="dialog" style="display: block;">
                     <div class="modal-dialog modal-fullscreen" role="document">
@@ -54,7 +57,7 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                               @* <p>Modal body text goes here.</p>*@
+                               <p>Modal body text goes here.</p>
                                 <iframe style="    position: relative;
     right: 0;
     bottom: 0;
@@ -65,14 +68,14 @@
 
                             </div>
                             <div class="modal-footer">
-                               @* <button type="button" class="btn btn-primary">Save changes</button>
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>*@
+                               <button type="button" class="btn btn-primary">Save changes</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>
                 </div>
             }
-            <hr />
+            <hr />*@
           
 
 
@@ -82,10 +85,16 @@
             <p>
               We have all experienced mindfulness; for example, when we are focused on something we enjoy such as sewing, playing a sport we love or a walk on a beautiful summer day. It is when time seems to have no meaning and you are fully and completely engaged in the present moment. These conditions make us feel fully alive and whole, but at times of difficulty and external pressures we fail to find this more helpful state of mind. Instead, many of us harm ourselves by the way we think about the challenges we face. We spend time and energy worrying about what might happen in the future or ruminating over things that have happened in the past.
             </p>
-            <p>
-                    @*<a href="https://youtu.be/NbizmVKHdgs" class="glightbox play-btn mb-4 btn-learn-more">Learn More</a>*@
+          @*   <p>
+                   
                     <Button class="play-btn mb-4 btn-learn-more" @onclick="@(() => { showModal = true; })">Learn More</Button>
-            </p>
+            </p> *@
+
+                <p>
+                    <iframe style="position: relative;right: 0;bottom: 0;
+    max-width:500px;width:95vw;aspect-ratio:3/2" src="https://www.youtube.com/embed/NbizmVKHdgs?si=a9HSH_Qm-sr1UNqL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </p>
+
             <p>
                     The MBSR course offers a solution by gently encouraging us to live more often in the present moment. Mindfulness practice does not invalidate our worries or concerns, but rather it allows us to take a break from them.
             </p>
@@ -93,6 +102,7 @@
             <p>
                     During the MBSR course we will also consider how to explore our difficulties as they emerge in the present moment, accept them and begin to think about how we might deal with them differently.
             </p>
+                
 
 @*            <ul>
               <li><i class="ri-check-double-line"></i> List 1</li>
@@ -174,14 +184,14 @@
 
             </div>
 
-            <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img" style='background-image: url("img/faq.jpg");'>&nbsp;</div>
+            <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img" style='background-image: url("img/faq2.webp");'>&nbsp;</div>
         </div>
 
     </div>
 </section><!-- End Faq Section -->
 
 <!-- ======= About Jean Section ======= -->
-<section id="whatismindfulness" class="about scrollspy-example" data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="0" tabindex="0" style="background-color:white">
+<section id="aboutjean" class="about scrollspy-example" data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="0" tabindex="0" style="background-color:white">
     <div class="container">
 
         <div class="section-title">
@@ -223,13 +233,14 @@
    
 
 </section><!-- End About Jean Section -->
+
 <!-- ======= Counts Section ======= -->
 <section id="counts" class="counts">
     <div class="container">
 
         <div class="text-center title">
             <h3>Our story so far...</h3>
-            <p>Iusto et labore modi qui sapiente xpedita tempora et aut non ipsum consequatur illo.</p>
+            @*<p>Iusto et labore modi qui sapiente xpedita tempora et aut non ipsum consequatur illo.</p>*@
         </div>
 
         <div class="row counters position-relative">
@@ -259,7 +270,7 @@
     </div>
 </section><!-- End Counts Section -->
 
-<a id="back-to-top" @onclick="GoToTop" class="btn btn-light btn-lg back-to-top" role="button"><i class="bi bi-chevron-up">grr</i></a>
+<a id="back-to-top" @onclick="GoToTop" class="btn btn-light btn-lg back-to-top" role="button"><i class="bi bi-chevron-up"></i></a>
 
 
 @code {
@@ -274,7 +285,9 @@
     //private Modal modal;
 
     bool showModal = false;
-
+    private bool scrolledToWhatIs = false; //todo: must be a better way?!
+    private bool scrolledAboutJean = false; //todo: must be a better way?!
+    
     protected override void OnInitialized()
     {
 
@@ -282,12 +295,30 @@
 
     protected override async Task OnInitializedAsync()
     {
+        Navigation.LocationChanged -= OnLocationChanged;
+        Navigation.LocationChanged += OnLocationChanged;
+        
+              
         _jsModule = await JS.InvokeAsync<IJSObjectReference>("import", "./js/helper.js");
 
         if (_jsModule!=null)
         {
             AttachScrollListener();
         }
+    }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        // execute conditionally for loading data, otherwise this will load
+        // every time the page refreshes
+        // if (firstRender)
+        // {
+        //     // Do work to load page data and set properties
+        //     //Navigation.LocationChanged -= OnLocationChanged;
+
+        //         Navigation.LocationChanged += OnLocationChanged;
+
+        // }
     }
 
     async Task GoToTop()
@@ -302,17 +333,40 @@
         await _jsModule.InvokeVoidAsync("onDivScroll2", minInterval);
     }
 
-    protected override async Task OnAfterRenderAsync(bool firstRender)
-    {
-        if (firstRender)
+
+
+    private async void OnLocationChanged(object sender, LocationChangedEventArgs e)
+    {       
+        //await _jsModule.InvokeVoidAsync("showAlert", e.Location);
+
+        if (e.Location.Contains("whatismindfulness")){
+          
+            if (!scrolledToWhatIs)
+            {
+                // await _jsModule.InvokeVoidAsync("showAlert", "Scroll Now!");
+                await _jsModule.InvokeVoidAsync("onLoadScrollToWhatIsMindfulness");
+                scrolledToWhatIs = true;
+            }
+            
+        }
+
+        if (e.Location.Contains("aboutJean"))
         {
 
+            if (!scrolledAboutJean)
+            {
+                // await _jsModule.InvokeVoidAsync("showAlert", "Scroll Now!");
+                await _jsModule.InvokeVoidAsync("onLoadScrollToAboutJean");
+                scrolledAboutJean = true;
+            }
+
         }
+        
     }
 
     public void Dispose()
     {
-        
+       // Navigation.LocationChanged -= OnLocationChanged;
     }
 
   
