@@ -4,6 +4,8 @@
 @inject IJSRuntime JS
 @implements IDisposable
 
+@using BlazorApp.Shared
+
 <PageTitle>mbsr</PageTitle>
 
 
@@ -17,252 +19,201 @@
         </div>
         <div class="row content">
             <div class="col-lg-12">
+                <h3>What is it?</h3>
                 <p>
-                    The MBSR course consists of 10 sessions and 31 hours of in-person training. I will be adhering to the 2017 MBSR Curriculum Guide, which is based on more than one million hours of delivery for more than 24,000 participants, many of whom were referred by more than 7,000 doctors, hundreds of other healthcare professionals, and through self-referral. My goal is to uphold the fidelity and integrity of MBSR as described in the 2017 Curriculum Guide from the Mindful Network in order to support the effectiveness, scientific validity, and academic rigour of this method.
+                    The MBSR course is an 8-week program that teaches mindfulness and compassion. It is designed to help individuals manage stress, anxiety, and pain 1. The course is based on the gold standard, Jon Kabat-Zinn Mindfulness-Based Stress Reduction training. The course includes practical tools, such as mindfulness meditation, body scanning, and simple yoga postures, as well as live mindfulness practices and group discussions. During the course, there is also the opportunity to attend a full day retreat.
                 </p>
-               
+                <h3>Why should I do it?</h3>
+                <p>
+                    Research has shown that MBSR can lead to various benefits, including reduced stress, improved emotional regulation, enhanced focus, better sleep quality, and increased overall well-being <strong>ref here</strong>. MBSR fosters a mindful approach to life, helping individuals develop a more compassionate relationship with themselves and the world around them <b>4</b>. The course is a prerequisite for anyone wanting to start the Mindfulness-Based Stress Reduction Teacher Training pathway.
+                </p>                
             </div>
-
         </div>
         </div>
     </section><!-- End About Us Section -->
+
+<!-- ======= Overview Section ======= -->
+
+@* eff2f0 *@
+<section id="mbsr-curriculum" class="services" style="background-color:#eff2f0">
+    <div class="container">
+        
+         <div class="row content">
+            <div class="col-lg-12" >
+                <div class="section-title">
+                    <h2>Overview</h2>
+                </div>
+                <h3><a onclick="document.getElementById('orientation').scrollIntoView(true,{behavior:'smooth'})">Orientation</a></h3>
+        <ul>
+            <li>Introduction & Course Overview</li>
+            <li>Meet your tutor and other participants</li>
+            <li>Q&A</li>
+        </ul>
+        <h3>Weeks 1 and 2</h3>
+        <p>The first two weeks of the course are focused on introducing mindfulness and its benefits. During this period, you will learn about the body scan, mind and body connection, and how to build mindfulness into daily life. You will also learn about stress and stress response 1</p>
+        <h3>Week 3 and 4 </h3>
+                <p>We continue to build on the foundation laid in the first two weeks. The focus shifts to stress reactivity and movement meditation. You will learn about responding versus reacting to stress, and how to manage difficulties and challenges in day-to-day life</p>
+
+
+        <h3>Week 5 and 6</h3>
+        <p>
+                    The focus shifts to working with the breath and managing difficulties and challenges in day-to-day life. You will also learn about self-care, compassion for self and others, and a loving kindness awareness practice
+        </p>
+                <h3>One day silent retreat</h3>
+                <p></p>
+                <h3>Weeks 7 and 8</h3>
+        <p>
+                  Focus on self-care, compassion for self and others, and a loving kindness awareness practice
+        </p>
+        </div>
+        </div>
+    </div>
+</section>
+
 
 <!-- ======= MBSR Section ======= -->
 <section id="mbsr-curriculum" class="services" style="background-color:white;">
     <div class="container">
 
         <div class="section-title">
-            <h2>Curriculum</h2>
+            <h2>Curriculum in detail</h2>
             <p>The MBSR course consists of 10 sessions and 31 hours of in-person training. I will be adhering to the 2017 MBSR Curriculum Guide, which is based on more than one million hours of delivery for more than 24,000 participants, many of whom were referred by more than 7,000 doctors, hundreds of other healthcare professionals, and through self-referral. My goal is to uphold the fidelity and integrity of MBSR as described in the 2017 Curriculum Guide from the Mindful Network in order to support the effectiveness, scientific validity, and academic rigour of this method.</p>
         </div>
       
         <div class="row">
-            <div class="col-lg-12 col-md-12 d-flex align-items-stretch mt-4 mt-md-0">
-                
-                <div class="icon-box">                  
-                    <div class="d-flex flex-row">
-                        <div class="icon">
-                            
-                                <a data-bs-toggle="collapse" class="collapsed" data-bs-target="#accordion-list-1">
-                                    Orientation
-                                    <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i>
-                                </a>
-                            
-                        </div>
-                      
+       
+       
+            <MSBRWeek 
+                Id="orientation"
+                Title="Orientation" 
+                SubHeading1="Orientation" 
+                Intro="The Orientation session is designed to:"
+                      Objectives=@OrientationObjectives
+                      Intro2="The session will include:"
+                      Objectives2=@OrientationObjectives2></MSBRWeek>
 
-                    </div>
-                  @*  <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>*@
-                    <div id="accordion-list-1" class="collapse" data-bs-parent=".accordion-list">
-                        <p>
-                            The Orientation session is designed to:
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Familiarise potential participants with what MBSR is and what it is not.</li>
-                                <li class="list-group-item">Dapibus ac facilisis in</li>
-                                <li class="list-group-item">Morbi leo risus</li>
-                                <li class="list-group-item">Porta ac consectetur ac</li>
-                                <li class="list-group-item">Vestibulum at eros</li>
-                            </ul>
-                            <ul>
-                                <li>
-                                    Familiarise potential participants with what MBSR is and what it is not.
-                                </li>
-                                                                <li>
-                                    Familiarise potential participants with what MBSR is and what it is not.
-                                </li>
-
-                                <li>
-                                    Familiarise potential participants with what MBSR is and what it is not.
-                                </li>
-
-                            </ul>
-                            Familiarise potential participants with what MBSR is and what it is not.
-                            Provide participants with an experience of mindfulness in an atmosphere of trust and non-judgmental awareness and exchange.
-                            Discover if the MBSR is a good match for participants’ needs.
-                            Elicit active participation in the programme, including a commitment to attend the sessions and engaging in formal and informal mindful practice at home.
-                            The session will include:
-                            A brief history of the MBSR course.
-                            An introduction to Mindfulness.
-                            Engagement in a brief mindful meditation practice.
-                            Introductions to other members of the group, and sharing of experiences.
-                            Sharing programme procedures, and an introduction to course logistics.
-                            An individual interview with myself.
-                            Answering any questions.
-                        </p>
-                    </div>    
-                </div>
-            </div>
-
-            <div class="col-lg-12 col-md-12 d-flex align-items-stretch mt-4 mt-md-0">
-
-                <div class="icon-box">
-                    <div class="d-flex flex-row">
-                        <div class="icon">
-
-                            <a data-bs-toggle="collapse" class="collapsed" data-bs-target="#accordion-list-2">
-                                1.Introduction
-                                <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i>
-                            </a>
-
-                        </div>
-
-
-                    </div>
-                    @*  <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>*@
-                    <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
-                        <h4>Introduction to Mindfulness</h4>
-                        <p>
-                            Week 1 is a 3-hour session, and will include:
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Cras justo odio</li>
-                                <li class="list-group-item">Dapibus ac facilisis in</li>
-                                <li class="list-group-item">Morbi leo risus</li>
-                                <li class="list-group-item">Porta ac consectetur ac</li>
-                                <li class="list-group-item">Vestibulum at eros</li>
-                            </ul>
-                            <ul>
-                                <li>
-                                    Familiarise potential participants with what MBSR is and what it is not.
-                                </li>
-                                <li>
-                                    Familiarise potential participants with what MBSR is and what it is not.
-                                </li>
-
-                                <li>
-                                    Familiarise potential participants with what MBSR is and what it is not.
-                                </li>
-
-                            </ul>
-                            Familiarise potential participants with what MBSR is and what it is not.
-                            Provide participants with an experience of mindfulness in an atmosphere of trust and non-judgmental awareness and exchange.
-                            Discover if the MBSR is a good match for participants’ needs.
-                            Elicit active participation in the programme, including a commitment to attend the sessions and engaging in formal and informal mindful practice at home.
-                            The session will include:
-                            A brief history of the MBSR course.
-                            An introduction to Mindfulness.
-                            Engagement in a brief mindful meditation practice.
-                            Introductions to other members of the group, and sharing of experiences.
-                            Sharing programme procedures, and an introduction to course logistics.
-                            An individual interview with myself.
-                            Answering any questions.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-12 col-md-12 d-flex align-items-stretch mt-4 mt-md-0">
-                <div class="icon-box">
-                    <div class="d-flex flex-row">
-                        <div class="icon">
-
-                            <a data-bs-toggle="collapse" class="collapsed" data-bs-target="#accordion-list-3">
-                                2.Perception
-                                <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i>
-                            </a>
-
-                        </div>
-                </div>
-                    <div id="accordion-list-3" class="collapse" data-bs-parent=".accordion-list">
-                        <h4>Perception</h4>
-                        <p>
-                            Week 1 is a 3-hour session, and will include:
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Cras justo odio</li>
-                                <li class="list-group-item">Dapibus ac facilisis in</li>
-                                <li class="list-group-item">Morbi leo risus</li>
-                                <li class="list-group-item">Porta ac consectetur ac</li>
-                                <li class="list-group-item">Vestibulum at eros</li>
-                            </ul>
-                            <ul>
-                                <li>
-                                    Familiarise potential participants with what MBSR is and what it is not.
-                                </li>
-                                <li>
-                                    Familiarise potential participants with what MBSR is and what it is not.
-                                </li>
-
-                                <li>
-                                    Familiarise potential participants with what MBSR is and what it is not.
-                                </li>
-
-                            </ul>
-                            Familiarise potential participants with what MBSR is and what it is not.
-                            Provide participants with an experience of mindfulness in an atmosphere of trust and non-judgmental awareness and exchange.
-                            Discover if the MBSR is a good match for participants’ needs.
-                            Elicit active participation in the programme, including a commitment to attend the sessions and engaging in formal and informal mindful practice at home.
-                            The session will include:
-                            A brief history of the MBSR course.
-                            An introduction to Mindfulness.
-                            Engagement in a brief mindful meditation practice.
-                            Introductions to other members of the group, and sharing of experiences.
-                            Sharing programme procedures, and an introduction to course logistics.
-                            An individual interview with myself.
-                            Answering any questions.
-                        </p>
-                    </div>
-            </div>
-            </div>
            
+            <MSBRWeek Id="week1"
+                Title="1.Introduction"
+                      SubHeading1="Introduction to Mindfulness"
+                      Intro="Week 1 is a 3-hour session, and will include:"
+                      Objectives=@(new List<string>()
+                       {
+                      "A review of the MBSR approach, and the establishment of a learning contract with participants.",
+                      "An explanation of the theoretical underpinnings of mindfulness.",
+                      "Introduction to mindful eating, some standing yoga stretches, mindfulness of breathing and the body scan meditation.",
+                      "Home practice is assigned using the first guided recording (body scan meditation) as a means of beginning to learn to become familiar with mindful awareness of the body."
+                        })
+                      Intro2=@null
+                      Objectives2=@null></MSBRWeek>
+
+          
+
+            <MSBRWeek Id="week2"
+                Title="2.Perception"
+                      SubHeading1="Perception"
+                      Intro=" Week 2 is a 2.5 hour session and will include:"
+                      Objectives=@(new List<string>()
+                      {
+                      "One hour of experiential mindfulness training and skill development.",
+                      "Focused dialogue and reflection on home practice.",
+                      "The role of perception and conditioning in the appraisal and assessment of stress.",
+                      "The pivotal role of self-responsibility in the positive development of short and long-term changes in health and health-enhancing behaviours is introduced.",
+                      "Home practice is assigned with an emphasis on the regular daily practice of the body scan for a second week, plus introduction of short periods of sitting meditation, and the application and integration of mindfulness into the participant’s everyday life."
+                      })
+                      Intro2=@null
+                      Objectives2=@null></MSBRWeek>
+
+            <MSBRWeek Id="week3"
+                      Title="3.Movement"
+                      SubHeading1="Mindfulness of the Breath and the Body in Movement"
+                      Intro="Week 3 is a 2.5 hour session in which we investigate several distinct yet interrelated formal mindfulness practices:"
+                      Objectives=@(new List<string>()
+                      {
+                      "Mindful hatha yoga (ending with a brief body scan).",
+                      "Sitting meditation.",
+                      "Walking meditation."                      
+                      })
+                      Intro2="This extended formal practice period is followed by inquiry into and exploration of participants’ experiences with in-class and assigned home practices. Typical topics include challenges and insights encountered in formal practice and in integrating mindfulness into everyday life."
+                      Objectives2=@null></MSBRWeek>
+
+            <MSBRWeek Id="week4"
+                      Title="4.Stress (i)"
+                      SubHeading1="Learning about our Patterns of Reactivity to Stress"
+                      Intro="Week 4 is a 2.5 hour session of participant engagement in a combination of the three major formal mindfulness practices that they have also been practising at home during the preceding three weeks. These include:"
+                      Objectives=@(new List<string>()
+                      {
+                      "Mindful hatha yoga.",
+                      "Sitting meditation.",
+                      "The body scan."
+                      })
+                      Intro2="In this class, a brief guided body scan will be completed before the start of the sitting practice. Instruction will emphasise the development of concentration, embodiment, the capacity to train and re-direct attention, and the systematic expansion of the field of awareness.The group will explore mindfulness as a means of recognising and reducing the negative effects of automatic, habitual stress reactivity."
+                      Objectives2=@null></MSBRWeek>
+
+            <MSBRWeek Id="week5"
+                      Title="5.Stress (ii)"
+                      SubHeading1="Coping with Stress: Using Mindfulness to Respond instead of React"
+                      Intro="Week 4 is a 2.5 hour session of participant engagement in a combination of the three major formal mindfulness practices that they have also been practising at home during the preceding weeks. These include:"
+                      Objectives=@(new List<string>()
+                      {
+                      "Mindful hatha yoga.",
+                      "Sitting meditation.",
+                      "The body scan."
+                      })
+                      Intro2="This session marks the halfway point in the course, it emphasises:"
+                      Objectives2=@(new List<string>()
+                      {
+                      "The capacity of participants to adapt more rapidly and effectively to everyday challenges and stressors.",
+                      "Consideration of responding (vs. reacting) to stressors and the value and utility of mindfulness in learning to stop, step back and see more clearly/objectively and to then be in a better position to make informed choices (responding) in meeting various situations.",
+                      "The use of mindfulness as a way to recover more rapidly from stressful encounters when they occur."
+                      }) 
+                      Intro3="Strategies will continue to be developed with emphasis on the growing capacity to attend more precisely to a variety of physical and mental perceptions, and to use this awareness as a way of deliberately interrupting and intervening in previously conditioned, habitual behaviours and choosing more effective mindfulness-mediated stress responses.Daily mindfulness practice is assigned, with an emphasis on the observation and application of mindful awareness in daily life."></MSBRWeek>
+
             <div class="col-lg-12 col-md-12 d-flex align-items-stretch mt-4 mt-md-0">
                 <div class="icon-box">
                     <div class="d-flex flex-row">
                         <div class="icon">
 
                             <a data-bs-toggle="collapse" class="collapsed" data-bs-target="#accordion-list-4">
-                                3.Movement
+                                3.Stress
                                 <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i>
                             </a>
 
                         </div>
                     </div>
                     <div id="accordion-list-4" class="collapse" data-bs-parent=".accordion-list">
-                        <h4>Mindfulness of the Breath and the Body in Movement</h4>
+                        <h4>Learning about our Patterns of Reactivity to Stress</h4>
                         <p>
-                            Week 3 is a 3-hour session, and will include:
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Cras justo odio</li>
-                                <li class="list-group-item">Dapibus ac facilisis in</li>
-                                <li class="list-group-item">Morbi leo risus</li>
-                                <li class="list-group-item">Porta ac consectetur ac</li>
-                                <li class="list-group-item">Vestibulum at eros</li>
-                            </ul>
+                            Week 4 is a 2.5 hour session, and will include:
+
                             <ul>
                                 <li>
-                                    Familiarise potential participants with what MBSR is and what it is not.
+                                    Participant engagement in a combination of the three major formal mindfulness practices that they have also been practising at home during the preceding three weeks. These include:
+                                    Mindful hatha yoga.
+                                    Sitting meditation.
+                                    The body scan.
+                                   
                                 </li>
                                 <li>
-                                    Familiarise potential participants with what MBSR is and what it is not.
-                                </li>
+                                    In this class, a brief guided body scan will be completed before the start of the sitting practice. Instruction will emphasise the development of concentration, embodiment, the capacity to train and re-direct attention, and the systematic expansion of the field of awareness.
 
+                                </li>
                                 <li>
-                                    Familiarise potential participants with what MBSR is and what it is not.
+                                    The group will explore mindfulness as a means of recognising and reducing the negative effects of automatic, habitual stress reactivity.
                                 </li>
-
                             </ul>
-                            Familiarise potential participants with what MBSR is and what it is not.
-                            Provide participants with an experience of mindfulness in an atmosphere of trust and non-judgmental awareness and exchange.
-                            Discover if the MBSR is a good match for participants’ needs.
-                            Elicit active participation in the programme, including a commitment to attend the sessions and engaging in formal and informal mindful practice at home.
-                            The session will include:
-                            A brief history of the MBSR course.
-                            An introduction to Mindfulness.
-                            Engagement in a brief mindful meditation practice.
-                            Introductions to other members of the group, and sharing of experiences.
-                            Sharing programme procedures, and an introduction to course logistics.
-                            An individual interview with myself.
-                            Answering any questions.
                         </p>
                     </div>
                 </div>
             </div>
 
-            <div class="col-lg-12 col-md-12 d-flex align-items-stretch mt-4 mt-md-0">
-                <div class="icon-box">
-                    <div class="icon"><i class="bx bx-world">Stress</i></div>
-                    <h4><a href="">Learning about our Patterns of Reactivity to Stress</a></h4>
-                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
-                </div>
-            </div>
+            <MSBRWeek Id="week4"
+                      Title="4.Stress"
+                      SubHeading1="Learning about our Patterns of Reactivity to Stress"
+                      Intro="Week 4 is a 2.5 hour session covering a combination of the three major formal mindfulness practices from the preceding three weeks."
+                      Objectives=@null
+                      Intro2="In this class, a brief guided body scan will be completed before the start of the sitting practice. Instruction will emphasise the development of concentration, embodiment, the capacity to train and re-direct attention, and the systematic expansion of the field of awareness.The group will explore mindfulness as a means of recognising and reducing the negative effects of automatic, habitual stress reactivity."
+                      Objectives2=@null></MSBRWeek>
 
             <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
                 <div class="icon-box">
@@ -327,6 +278,23 @@
 
     //private Modal modal;
 
+
+    private List<String> OrientationObjectives = new List<String>() { 
+        "Familiarise potential participants with what MBSR is and what it is not.", 
+        "Provide participants with an experience of mindfulness in an atmosphere of trust and non-judgmental awareness and exchange.",
+                "Discover if the MBSR is a good match for participants’ needs.",
+        "Elicit active participation in the programme, including a commitment to attend the sessions and engaging in formal and informal mindful practice at home."
+    };
+
+    private List<String> OrientationObjectives2 = new List<String>() {
+        "A brief history of the MBSR course.",
+        "Engagement in a brief mindful meditation practice.",
+         "Introductions to other members of the group, and sharing of experiences.",
+        "Sharing programme procedures, and an introduction to course logistics.",
+        "An individual interview with myself.",
+        "Answering any questions."
+    };
+ 
     protected override void OnInitialized()
     {
 

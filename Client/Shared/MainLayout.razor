@@ -13,10 +13,10 @@
             
 
                 <nav id="navbar" class="navbar order-last order-lg-0 @NavMenuCssClass">
-                    <i id="show-menu" class="bi bi-list navbar-toggler-icon mobile-nav-toggle" @onclick="ToggleNavMenu" style="color:white">                        
+                    <i id="show-menu" class="bi bi-list mobile-nav-toggle" @onclick="ToggleNavMenu" style="color:white">                        
                     </i>
                     <ul @onclick="CloseNavMenu">
-                        <li  id="close-menu"><a class="nav-link scrollto @CloseMenuCssClass" href="#hero" style="float:right">Close Menu</a></li>
+                        <li  id="close-menu"><a class="nav-link scrollto @CloseMenuCssClass" href="#hero" style="float:right">X</a></li>
                         <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
                         <li><a class="nav-link" onclick="document.getElementById('whatismindfulness').scrollIntoView({behavior:'smooth'})">What is mindfulness?</a></li>
                         <li><a class="nav-link scrollto" href="/mbsr">The MBSR</a></li>

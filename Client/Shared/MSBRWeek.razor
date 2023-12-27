@@ -1,0 +1,93 @@
+﻿<div class="col-lg-12 col-md-12 d-flex align-items-stretch mt-4 mt-md-0" id="@Id" style="padding-top:100px;">
+    <div class="icon-box">
+        <div class="d-flex flex-row">
+            <div class="icon">
+
+                @* class="collapsed" *@
+                <a data-bs-toggle="collapse" class="" data-bs-target="#accordion-list-@Id">
+                   @Title                    
+                    <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i>
+                </a>
+
+            </div>
+        </div>
+        <div id="accordion-list-@Id" class="collapse show" data-bs-parent=".accordion-list">
+            <h4>@SubHeading1</h4>
+                @Intro
+
+            @if (Objectives != null)
+            {
+                <ul>
+
+                    @foreach (string objective in Objectives)
+                    {
+                        <li>@objective</li>
+                    }
+                </ul>
+            }
+            @if (Intro2 != null)
+            {
+                <br />
+                @Intro2
+                @if (Objectives2 != null)
+                {
+                    <ul>
+
+                        @foreach (string objective in Objectives2)
+                        {
+                            <li>@objective</li>
+                        }
+                </ul>
+                }
+            }
+
+            @if (Intro3 != null)
+            {
+                <br />
+                @Intro3
+                @if (Objectives3 != null)
+                {
+                    <ul>
+
+                        @foreach (string objective in Objectives3)
+                        {
+                            <li>@objective</li>
+                        }
+                    </ul>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+
+@code {
+
+    [Parameter]
+    public string Id { get; set; }
+
+    [Parameter]
+    public string? Title { get; set; }
+
+    [Parameter]
+    public string? SubHeading1 { get; set; }
+
+    [Parameter]
+    public string? Intro { get; set; }
+
+    [Parameter]
+    public List<string>? Objectives { get; set; }
+
+    [Parameter]
+    public string? Intro2 { get; set; }
+
+    [Parameter]
+    public List<string>? Objectives2 { get; set; }
+
+    [Parameter]
+    public string? Intro3 { get; set; }
+
+    [Parameter]
+    public List<string>? Objectives3 { get; set; }
+
+}
