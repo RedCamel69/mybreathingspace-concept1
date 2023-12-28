@@ -1,0 +1,102 @@
+﻿@page "/mbsr/weeks7and8"
+@layout SecondaryLayout
+
+@inject IJSRuntime JS
+@implements IDisposable
+
+@using BlazorApp.Shared
+
+<PageTitle>MSBR Weeks 7 and 8</PageTitle>
+
+<!-- ======= WhatIsMindfulness Section ======= -->
+<section id="msbr-title" class="about scrollspy-example" data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="0" tabindex="0" style="background-color:white; padding-top:130px">
+    <div class="container">
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="mbsr">MSBR</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Weeks 7 and 8</li>
+            </ol>
+        </nav>
+
+        <div class="section-title">
+            <h2>The MBSR</h2>
+        </div>
+        <div class="row content">
+            <div class="col-lg-12">
+                <h3>Weeks 7 and 8</h3>
+
+
+                Life Style Choices: How can I best take care of myself?
+                Week 7 is a 2.5 hour session and will include:
+
+                A review and discussion about the silent retreat.
+                Continued discussion about communication which began in week 6.
+                Developing discipline and flexibility in personal daily mindfulness practice with an emphasis on maintaining 45 minutes of daily practice, without recorded instructions.
+                Encouraging attunement to the changing conditions of daily life, and adapting practice accordingly.
+                Keeping Your Mindfulness Alive
+                Week 8 is a 3.0 hour session, and includes:
+
+                Participants are given ample opportunity to inquire into and clarify any lingering questions about the various practices and their applications in everyday life.
+                A review of the program is included with an emphasis on daily strategies for maintaining and deepening the skills developed during the course.
+                Closure by honouring both the end of this program and the beginning of living one’s life informed with mindfulness.
+                Voluntary group contribution acknowledging what has been most salient, what people are taking away, or what has been discovered. It is important for all participants to know that all comments are welcomed in this segment of class 8. It is an open, honest appraisal of each participant’s experience of MBSR.
+            
+
+            </div>
+        </div>
+    </div>
+</section><!-- End About Us Section -->
+@code {
+
+    private IJSObjectReference? _jsModule;
+
+
+   
+
+    protected override async Task OnInitializedAsync()
+    {
+        _jsModule = await JS.InvokeAsync<IJSObjectReference>("import", "./js/helper.js");
+
+        if (_jsModule != null)
+        {
+            AttachScrollListener();
+        }
+    }
+
+    async Task GoToTop()
+    {
+        await _jsModule.InvokeVoidAsync("ScrollToTop");
+    }
+
+    async Task AttachScrollListener()
+    {
+        //selfReference = DotNetObjectReference.Create(this);
+        var minInterval = 500; // Only notify every 500 ms
+        await _jsModule.InvokeVoidAsync("onContentPageScroll", minInterval);
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+
+        }
+    }
+
+    public void Dispose()
+    {
+
+    }
+
+    private async Task OnShowModalClick()
+    {
+        //await modal?.ShowAsync();
+    }
+
+    private async Task OnHideModalClick()
+    {
+        //await modal?.HideAsync();
+    }
+}

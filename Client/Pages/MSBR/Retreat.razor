@@ -1,0 +1,103 @@
+﻿@page "/mbsr/retreat"
+@layout SecondaryLayout
+
+@inject IJSRuntime JS
+@implements IDisposable
+
+@using BlazorApp.Shared
+
+<PageTitle>MSBR Retreat</PageTitle>
+
+<!-- ======= WhatIsMindfulness Section ======= -->
+<section id="msbr-title" class="about scrollspy-example" data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="0" tabindex="0" style="background-color:white; padding-top:130px">
+    <div class="container">
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="mbsr">MSBR</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Retreat</li>
+            </ol>
+        </nav>
+
+        <div class="section-title">
+            <h2>The MBSR</h2>
+        </div>
+        <div class="row content">
+            <div class="col-lg-12">
+                <h3>Retreat</h3>
+
+
+                One day silent retreat between 9:00am to 4:30pm
+                The Saturday between week 6 and week 7 is the a 7.5 hour all day silent retreat
+
+                The aim of the day is to assist participants in firmly and effectively establishing the use of mindfulness across multiple situations in their lives, while simultaneously preparing them to utilise these methods far beyond the conclusion of the course. It will include a range of practice including:
+
+                Hatha Yoga.
+                Sitting Meditation.
+                Body Scan.
+                Walking Meditation.
+                Mountain or Lake Meditation.
+                Eating Meditation (informal, at lunch).
+                Fast/Slow Walking.
+                Loving-Kindness Meditation.
+                Visual meditation followed by mindful walking, (possibly outdoors).
+                Mindfulness of sight and sound; stopping and noticing one thing.
+                Closing Meditation.
+
+            </div>
+        </div>
+    </div>
+</section><!-- End About Us Section -->
+@code {
+
+    private IJSObjectReference? _jsModule;
+
+
+   
+
+    protected override async Task OnInitializedAsync()
+    {
+        _jsModule = await JS.InvokeAsync<IJSObjectReference>("import", "./js/helper.js");
+
+        if (_jsModule != null)
+        {
+            AttachScrollListener();
+        }
+    }
+
+    async Task GoToTop()
+    {
+        await _jsModule.InvokeVoidAsync("ScrollToTop");
+    }
+
+    async Task AttachScrollListener()
+    {
+        //selfReference = DotNetObjectReference.Create(this);
+        var minInterval = 500; // Only notify every 500 ms
+        await _jsModule.InvokeVoidAsync("onContentPageScroll", minInterval);
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+
+        }
+    }
+
+    public void Dispose()
+    {
+
+    }
+
+    private async Task OnShowModalClick()
+    {
+        //await modal?.ShowAsync();
+    }
+
+    private async Task OnHideModalClick()
+    {
+        //await modal?.HideAsync();
+    }
+}

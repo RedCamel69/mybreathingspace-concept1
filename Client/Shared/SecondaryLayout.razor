@@ -19,8 +19,26 @@
                         <li  id="close-menu"><a class="nav-link scrollto @CloseMenuCssClass" href="#hero" style="float:right">Close Menu</a></li>
                         <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
                         <li><a class="nav-link" href="/#whatismindfulness">What is mindfulness?</a></li>
-                        <li><a class="nav-link scrollto" href="/mbsr">The MBSR</a></li>
                         <li><a class="nav-link scrollto " href="/#aboutJean">About Jean</a></li>
+                       @*  <li><a class="nav-link scrollto" href="/mbsr">The MBSR</a></li> *@
+
+                        <li class="dropdown">
+                           <a href="/mbsr"><span>The MSBR
+                            </span> <i class="bi bi-chevron-down"></i></a>
+ 
+                              
+
+                            <ul class="@NavMenuDropdownCssClass">
+                                <li><a href="/mbsr">Overview</a></li>
+                                <li><a href="/mbsr/orientation">Orientation</a></li>
+                                <li><a href="/mbsr/weeks1and2">Weeks 1 and 2</a></li>
+                                <li><a href="/mbsr/weeks3and4">Weeks 3 and 4</a></li>
+                                <li><a href="/mbsr/weeks5and6">Weeks 5 and 6</a></li>
+                                <li><a href="/mbsr/retreat">Retreat</a></li>
+                                <li><a href="/mbsr/weeks7and8">Weeks 7 and 8</a></li>
+                            </ul>
+                        </li>
+
                       @*   <li><a class="nav-link scrollto" href="#pricing">Pricing</a></li>
                         <li class="dropdown">
                             <a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
@@ -87,6 +105,8 @@
     private bool collapseNavMenu = true;
 
     private string? NavMenuCssClass => collapseNavMenu ? null : "navbar-mobile";
+
+    private string? NavMenuDropdownCssClass => collapseNavMenu ? null : "dropdown-active";
 
     private string @CloseMenuCssClass => collapseNavMenu ? "d-none" : "d-flex";
 

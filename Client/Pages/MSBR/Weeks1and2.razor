@@ -1,0 +1,158 @@
+﻿@page "/mbsr/weeks1and2"
+@layout SecondaryLayout
+
+@inject IJSRuntime JS
+@implements IDisposable
+
+@using BlazorApp.Shared
+
+<PageTitle>MSBR Weeks 1 and 2</PageTitle>
+
+<!-- ======= Weeks 1 and 2 Section ======= -->
+<section id="msbr-title" class="about scrollspy-example" data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="0" tabindex="0" style="background-color:white; padding-top:130px">
+    <div class="container">
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="mbsr">MSBR</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Weeks 1 and 2</li>
+            </ol>
+        </nav>
+
+        <br />
+
+        <div class="section-title">
+            <h2>The MBSR</h2>
+        </div>
+        <div class="row content">
+            <div class="col-lg-12">
+                <h3>Weeks 1 and 2</h3>
+
+                <br />
+
+               @*  <MSBRWeek Id="week1"
+                          Title="1.Introduction"
+                          SubHeading1="Introduction to Mindfulness"
+                          Intro="Week 1 is a 3-hour session, and will include:"
+                          Objectives=@(new List<string>()
+                          {
+                          "A review of the MBSR approach, and the establishment of a learning contract with participants.",
+                          "An explanation of the theoretical underpinnings of mindfulness.",
+                          "Introduction to mindful eating, some standing yoga stretches, mindfulness of breathing and the body scan meditation.",
+                          "Home practice is assigned using the first guided recording (body scan meditation) as a means of beginning to learn to become familiar with mindful awareness of the body."
+                          })
+                          Intro2=@null
+                          Objectives2=@null></MSBRWeek>
+
+
+
+                <MSBRWeek Id="week2"
+                          Title="2.Perception"
+                          SubHeading1="Perception"
+                          Intro=" Week 2 is a 2.5 hour session and will include:"
+                          Objectives=@(new List<string>()
+                          {
+                          "One hour of experiential mindfulness training and skill development.",
+                          "Focused dialogue and reflection on home practice.",
+                          "The role of perception and conditioning in the appraisal and assessment of stress.",
+                          "The pivotal role of self-responsibility in the positive development of short and long-term changes in health and health-enhancing behaviours is introduced.",
+                          "Home practice is assigned with an emphasis on the regular daily practice of the body scan for a second week, plus introduction of short periods of sitting meditation, and the application and integration of mindfulness into the participant’s everyday life."
+                          })
+                          Intro2=@null
+                          Objectives2=@null></MSBRWeek> *@
+
+                <h3>1. Introduction to Mindfulness</h3>
+                <p>
+                    Week 1 is a 3-hour session, and will include:
+                </p>
+                
+                <ul>
+                    <li>A review of the MBSR approach, and the establishment of a learning contract with participants.</li>
+                    <li>An explanation of the theoretical underpinnings of mindfulness.</li>
+                    <li>Introduction to mindful eating, some standing yoga stretches, mindfulness of breathing and the body scan meditation.</li>
+                    <li>Home practice is assigned using the first guided recording (body scan meditation) as a means of beginning to learn to become familiar with mindful awareness of the body.</li>
+                </ul>
+                
+                <hr />
+
+                <h3>2. Perception</h3>
+                
+                <p>
+                Week 2 is a 2.5 hour session and will include:
+                <ul>
+                    <li>One hour of experiential mindfulness training and skill development.</li>
+                    <li>One hour or more will be spent on:</li>
+                    <li>Focused dialogue and reflection on home practice.</li>
+                    <li>The role of perception and conditioning in the appraisal and assessment of stress.</li>
+                    <li>The pivotal role of self-responsibility in the positive development of short and long-term changes in health and health-enhancing behaviours is introduced.</li>
+                    <li>Home practice is assigned with an emphasis on the regular daily practice of the body scan for a second week, plus introduction of short periods of sitting meditation, and the application and integration of mindfulness into the participant’s everyday life.</li>
+                </ul>
+                
+                
+                
+                
+                
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ======= End Weeks 1 and 2 Section ======= -->
+
+
+<a id="back-to-top" @onclick="GoToTop" class="btn btn-light btn-lg back-to-top" role="button"><i class="bi bi-chevron-up"></i></a>
+
+
+@code {
+
+    private IJSObjectReference? _jsModule;
+
+
+   
+
+    protected override async Task OnInitializedAsync()
+    {
+        _jsModule = await JS.InvokeAsync<IJSObjectReference>("import", "./js/helper.js");
+
+        if (_jsModule != null)
+        {
+            AttachScrollListener();
+        }
+    }
+
+    async Task GoToTop()
+    {
+        await _jsModule.InvokeVoidAsync("ScrollToTop");
+    }
+
+    async Task AttachScrollListener()
+    {
+        //selfReference = DotNetObjectReference.Create(this);
+        var minInterval = 500; // Only notify every 500 ms
+        await _jsModule.InvokeVoidAsync("onContentPageScroll", minInterval);
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+
+        }
+    }
+
+    public void Dispose()
+    {
+
+    }
+
+    private async Task OnShowModalClick()
+    {
+        //await modal?.ShowAsync();
+    }
+
+    private async Task OnHideModalClick()
+    {
+        //await modal?.HideAsync();
+    }
+}
