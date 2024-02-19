@@ -1,0 +1,68 @@
+﻿
+.mindfulness-bg-the-summer-day {
+    background: url(../img/week2/the-summer-day-2.jpg) no-repeat fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow: hidden;
+    color: white;
+   /* padding: 0.5em;*/
+}
+
+.home-practice-bg {
+    background: url(../img/mindfulness-practice-1.jpg) no-repeat fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow: hidden;
+    color: white;
+    padding: 0.5em;
+}
+
+
+
+@media (max-width: 600px) {
+    .home-practice-bg {
+        background: url(../img/mindfulness-practice-1.jpg) no-repeat fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        overflow: hidden;
+        color: white;
+        padding: 0em;
+    }
+}
+
+.row {
+    animation: row_fade 1s;
+}
+
+@keyframes row_fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0.8;
+    }
+}
+
+.poem {
+    background-color: black;
+    opacity: 0.9;
+    padding: 1em;
+    animation: poem_fade 1s;
+}
+
+@keyframes poem_fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0.9;
+    }
+}

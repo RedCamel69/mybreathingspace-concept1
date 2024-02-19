@@ -1,0 +1,43 @@
+﻿
+.mindfulness-bg-daisies {
+    background: url(../img/week1/daisies-bg.jpg) no-repeat fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow: hidden;
+    color: white;
+    padding-top: 5em;
+}
+
+
+.row {
+    animation: row_fade 1s;
+}
+
+@keyframes row_fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0.8;
+    }
+}
+
+.poem {
+    background-color: black;
+    opacity: 0.5;
+    padding: 1em;
+    animation: poem_fade 1s ease;
+}
+
+@keyframes poem_fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0.5;
+    }
+}

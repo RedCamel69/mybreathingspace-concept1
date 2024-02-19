@@ -1425,9 +1425,11 @@ section {
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
+
+
 #footer {
     /*background: url("../img/footer-bg.webp") top center no-repeat;*/
-    background-color:black;
+    background-color: black;
     background-size: cover;
     color: #fff;
     font-size: 14px;

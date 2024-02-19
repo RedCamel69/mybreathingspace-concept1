@@ -39,4 +39,9 @@
     <None Include="Shared\Modal.razor" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\img\week2\" />
+    <Folder Include="wwwroot\img\week1\" />
+  </ItemGroup>
+
 </Project>
