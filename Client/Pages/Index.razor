@@ -1,6 +1,7 @@
 ﻿@page "/"
 @page "/home"
 
+@layout SecondaryLayout
 @inject IJSRuntime JS
 @inject NavigationManager Navigation;
 
@@ -8,10 +9,10 @@
 
 @using BlazorApp.Shared
 
-<PageTitle>Index</PageTitle>
+<PageTitle>mybreathingspace.net - mindfulness coaching</PageTitle>
 
 <!-- ======= Hero Section ======= -->
-<section id="hero" class="d-flex flex-column justify-content-center" >
+<section id="hero" class="d-flex flex-column justify-content-center">   
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-xl-8">
@@ -19,21 +20,21 @@
                 <h2>
                     <!-- <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox play-btn mb-4"></a> -->
                 </h2>
-
             </div>
         </div>
-    </div>
+    </div>   
+    <a onclick="document.getElementById('whatismindfulness').scrollIntoView({behavior:'smooth'})" class="btn-scroll scrollto" title="Scroll Down" style="text-align:center;color:white;font-size:xx-large"><i class="bi bi-chevron-down"></i></a>
 </section><!-- End Hero -->
 
 <!-- ======= WhatIsMindfulness Section ======= -->
 <section id="whatismindfulness" class="about scrollspy-example" data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="0" tabindex="0" style="background-color:white">
     <a name="whatismindfulness2" id="whatismindfulness2"></a>
-    <div class="container">
-
+    <div class="container">       
         <div class="section-title">
-          <h2>What is Mindfulness?</h2>
+            <h2>What is <strong>Mindfulness?</strong></h2>
         </div>
-
+        
+     
         <div class="row content">
 
             <p>
@@ -119,8 +120,8 @@
     </section><!-- End About Us Section -->
 
 <!-- ======= Faq Section ======= -->
-<section id="faq" class="faq text-light">
-    <div class="container-fluid">
+<section id="faq" class="faq text-dark">
+    <div class="container">
 
         <div class="row">
 
@@ -128,15 +129,13 @@
 
                 <div class="content">
                     <h3>Frequently Asked <strong>Questions</strong></h3>
-                    <p class="text-light">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
-                    </p>
+                    <p class=""></p>
                 </div>
 
                 <div class="accordion-list text-dark">
                     <ul>
                         <li>
-                            <a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-1">Is Mindfulness just a fad? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></a>
+                            <a data-bs-toggle="collapse" class="" data-bs-target="#accordion-list-1">Is Mindfulness just a fad? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></a>
                             <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
                                 <p>
                                     It is doubtful that mindfulness will disappear anytime soon. Mindfulness has been mocked, for example, in adult Ladybird books, but it has a large evidence base.
@@ -171,8 +170,8 @@
                         </li>
 
                         <li>
-                            <a data-bs-toggle="collapse" data-bs-target="#accordion-list-3" class="collapsed">Can I practise at home?<i class="bi bi-chevron-down icon-show"></i><i class="bi-chevron-up bi icon-close"></i></a>
-                            <div id="accordion-list-3" class="collapse" data-bs-parent=".accordion-list">
+                            <a data-bs-toggle="collapse" data-bs-target="#accordion-list-4" class="collapsed">Can I practise at home?<i class="bi bi-chevron-down icon-show"></i><i class="bi-chevron-up bi icon-close"></i></a>
+                            <div id="accordion-list-4" class="collapse" data-bs-parent=".accordion-list">
                                 <p>
                                     Mindfulness is like any other learning experience; unless it is practised on a regular basis it is unlikely to be beneficial. Home practice will be provided, but can be adapted to suit each person’s individual’s lifestyle. The homework is designed to be enjoyable.
                                 </p>
@@ -182,12 +181,57 @@
                     </ul>
                 </div>
 
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Is Mindfulness just a fad?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <p>
+                                    It is doubtful that mindfulness will disappear anytime soon. Mindfulness has been mocked, for example, in adult Ladybird books, but it has a large evidence base.
+
+                                    In the late 1990s, there was an increase in research into the effectiveness of MBSR courses. It has been shown to alleviate distress in those experiencing depression and anxiety. Participants in MBSR courses reported being better able to cope with and manage stress. (Biegel et al 2009; Beal et al 2012).
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Is Mindfulness Buddhism?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Accordion Item #3
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
             @* <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img" style='background-image: url("img/faq2.webp");'>&nbsp;</div> *@
         </div>
 
     </div>
+
+  
 </section><!-- End Faq Section -->
 
 <!-- ======= About Jean Section ======= -->
@@ -299,7 +343,7 @@
         Navigation.LocationChanged += OnLocationChanged;
         
               
-        _jsModule = await JS.InvokeAsync<IJSObjectReference>("import", "./js/helper.js");
+        _jsModule = await JS.InvokeAsync<IJSObjectReference>("import", "../js/main.js");
 
         if (_jsModule!=null)
         {

@@ -1,82 +1,45 @@
-﻿@inherits LayoutComponentBase
+﻿@using BlazorApp.Client.Components
+@inherits LayoutComponentBase
+
+@inject NavigationManager Navigation;
 
 <!-- ======= Header ======= -->
-<header id="header" class="fixed-top header-scrolled" >
-    <div class="container-fluid">
-
-        <div class="row justify-content-center">
-            <div class="col-xl-9 d-flex align-items-center justify-content-lg-between">
-                <h1 class="logo me-auto me-lg-0"><a href="../">MyBreathingspace.net</a></h1>
-                <!-- Uncomment below if you prefer to use an image logo -->
-                <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
-            
-
-                <nav id="navbar" class="navbar order-last order-lg-0 header-scrolled @NavMenuCssClass">
-                    <i id="show-menu" class="bi bi-list mobile-nav-toggle" @onclick="ToggleNavMenu" style="color:white">                
-                    </i>
-                    <ul @onclick="CloseNavMenu">
-                        <li  id="close-menu"><a class="nav-link scrollto @CloseMenuCssClass" href="#hero" style="float:right">Close Menu</a></li>
-                        <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-                        <li><a class="nav-link" href="/#whatismindfulness">What is mindfulness?</a></li>
-                        <li><a class="nav-link scrollto " href="/#aboutJean">About Jean</a></li>
-                       @*  <li><a class="nav-link scrollto" href="/mbsr">The MBSR</a></li> *@
-
-                        <li class="dropdown">
-                           <a href="/mbsr"><span>The MSBR
-                            </span> <i class="bi bi-chevron-down"></i></a>
+<header id="header" class="fixed-top d-flex justify-content-center align-items-center @headerTransparentCss">
+    <nav id="navbar" class="navbar @NavMenuCssClass">
+        <ul @onclick="CloseNavMenu">
+            <li>
+                <!-- make home a standard a otherwise will match all page refreshes-->
+                @* <a href="/" Match="NavLinkMatch.All" @onclick="@(() => CloseNavMenu("home"))" class="@homeLinkCSS">Home</a> *@
+                <NavLink href="/" Match="NavLinkMatch.All">Home</NavLink> 
+            </li>
+            <li>
+                @* <a href="#why-yoga" Match="NavLinkMatch.All" @onclick="@(() => CloseNavMenu("about"))" class="@aboutLinkCSS">About</a> *@
+                <NavLink href="/#whatismindfulness" Match="NavLinkMatch.All" class="">What is mindfulness?</NavLink>
+            </li>
+            <li>
+                @* <a href="/#classes" Match="NavLinkMatch.All" @onclick="@(() => CloseNavMenu("classes"))" class="@classesLinkCSS">Classes</a> *@
+                <NavLink href="/#aboutjean" Match="NavLinkMatch.All">About Jean</NavLink>
+            </li>
+            <li class="dropdown">
+                <NavLink href="/mbsr" Match="NavLinkMatch.All">The MBSR</NavLink>              
+                <ul>
+                    <li><NavLink href="/mbsr" Match="NavLinkMatch.All">Overview</NavLink></li>
+                    <li><NavLink href="/mbsr/orientation" Match="NavLinkMatch.All">Orientation</NavLink></li>
+                    <li><NavLink href="/mbsr/weeks1and2" Match="NavLinkMatch.All">Weeks 1 and 2</NavLink></li>
+                    <li><NavLink href="/mbsr/weeks3and4" Match="NavLinkMatch.All">Weeks 3 and 4</NavLink></li>
+                    <li><NavLink href="/mbsr/weeks5and6" Match="NavLinkMatch.All">Weeks 5 and 6</NavLink></li>
+                    <li><NavLink href="/mbsr/retreat" Match="NavLinkMatch.All">Retreat</NavLink></li>
+                    <li><NavLink href="/mbsr/weeks7and8" Match="NavLinkMatch.All">Weeks 7 and 8</NavLink></li>
+                </ul>
+            </li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle @mobileMenuTogglerCssClass" @onclick="ToggleNavMenu"></i>
+    </nav><!-- .navbar -->
+    
  
-                              
-
-                            <ul class="@NavMenuDropdownCssClass">
-                                <li><a href="/mbsr">Overview</a></li>
-                                <li><a href="/mbsr/orientation">Orientation</a></li>
-                                <li><a href="/mbsr/weeks1and2">Weeks 1 and 2</a></li>
-                                <li><a href="/mbsr/weeks3and4">Weeks 3 and 4</a></li>
-                                <li><a href="/mbsr/weeks5and6">Weeks 5 and 6</a></li>
-                                <li><a href="/mbsr/retreat">Retreat</a></li>
-                                <li><a href="/mbsr/weeks7and8">Weeks 7 and 8</a></li>
-                            </ul>
-                        </li>
-
-                      @*   <li><a class="nav-link scrollto" href="#pricing">Pricing</a></li>
-                        <li class="dropdown">
-                            <a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-                            <ul>
-                                <li><a href="#">Drop Down 1</a></li>
-                                <li class="dropdown">
-                                    <a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                                    <ul>
-                                        <li><a href="#">Deep Drop Down 1</a></li>
-                                        <li><a href="#">Deep Drop Down 2</a></li>
-                                        <li><a href="#">Deep Drop Down 3</a></li>
-                                        <li><a href="#">Deep Drop Down 4</a></li>
-                                        <li><a href="#">Deep Drop Down 5</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Drop Down 2</a></li>
-                                <li><a href="#">Drop Down 3</a></li>
-                                <li><a href="#">Drop Down 4</a></li>
-                            </ul>
-                        </li>
-                        <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-                        <li class="dropdown">
-                            <a href="#"><span>Course</span> <i class="bi bi-chevron-down"></i></a>
-                            <ul>
-                                <li><a href="course/week1.html">Week 1</a></li>
-                                <li><a href="course/week2.html">Week 2</a></li>
-                            </ul>
-                        </li>
-                        <li><a class="nav-link scrollto" href="course/week1.html">Week1</a></li> *@
-                    </ul>                                      
-                </nav><!-- .navbar -->
-                <!-- <a href="#whatismindfulness" class="get-started-btn scrollto">Get Started</a> -->
-            </div>
-        </div>
-
-    </div>
 </header><!-- End Header -->
 
+<AnchorNavigation />
 
 
  @Body
@@ -102,15 +65,33 @@
 </footer><!-- End Footer -->
 
 @code {
+
+    private bool landingPage = true;
+    private string? headerTransparentCss => landingPage ? "header-transparent" : null;
+
     private bool collapseNavMenu = true;
 
     private string? NavMenuCssClass => collapseNavMenu ? null : "navbar-mobile";
 
     private string? NavMenuDropdownCssClass => collapseNavMenu ? null : "dropdown-active";
+    private string? mobileMenuTogglerCssClass => collapseNavMenu ? null : "bi-x";
 
     private string @CloseMenuCssClass => collapseNavMenu ? "d-none" : "d-flex";
 
     private int counter;
+
+    protected override async Task OnInitializedAsync()
+    {
+        Navigation.LocationChanged -= OnLocationChanged;
+        Navigation.LocationChanged += OnLocationChanged;
+    }
+
+    private async void OnLocationChanged(object sender, LocationChangedEventArgs e)
+    {
+      
+        landingPage = e.Location.Contains("home") || (Navigation.Uri == Navigation.BaseUri);
+
+    }
 
     private void ToggleNavMenu()
     {
