@@ -14,75 +14,47 @@
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="d-flex flex-column justify-content-center">   
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-xl-8">
+        <div class="row justify-content-center text-center">
+            @* <div class="col-xl-8"> *@
                 <h1>Become gently aware of this, the present moment...</h1>
                 <h2>
                     <!-- <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox play-btn mb-4"></a> -->
                 </h2>
-            </div>
+           @*  </div> *@
         </div>
     </div>   
-    <a onclick="document.getElementById('whatismindfulness').scrollIntoView({behavior:'smooth'})" class="btn-scroll scrollto" title="Scroll Down" style="text-align:center;color:white;font-size:xx-large"><i class="bi bi-chevron-down"></i></a>
+    <div class="container">
+        <div class="row justify-content-between text-center">
+            <a onclick="document.getElementById('whatismindfulness').scrollIntoView({behavior:'smooth'})" class="btn-scroll scrollto" title="Scroll Down" style="text-align:center;color:white;font-size:xx-large"><i class="bi bi-chevron-down"></i></a>
+        </div>
+    </div>
+    
 </section><!-- End Hero -->
 
 <!-- ======= WhatIsMindfulness Section ======= -->
-<section id="whatismindfulness" class="about scrollspy-example" data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="0" tabindex="0" style="background-color:white">
-    <a name="whatismindfulness2" id="whatismindfulness2"></a>
+<section id="whatismindfulness" class="" data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="0" tabindex="0" style="background-color:white">
     <div class="container">       
         <div class="section-title">
             <h2>What is <strong>Mindfulness?</strong></h2>
         </div>
         
      
-        <div class="row content">
+        <div class="row content lead">
 
-            <p>
-                <strong>‘Mindfulness is the awareness that emerges through paying attention on purpose, in the present moment, and non-judgementally, to things as they are.’
-
-                    Williams, Teasdale, Segal, and Kabat-Zinn 2007
-                </strong>
-            </p>
+            <blockquote class="blockquote text-center">
+                <p class="">Mindfulness is the awareness that emerges through paying attention on purpose, in the present moment, and non-judgementally, to things as they are.</p>
+                <footer class="blockquote-footer"> Williams, Teasdale, Segal, and Kabat-Zinn 2007 <cite title="Source Title"></cite></footer>
+            </blockquote>
+            </div>
+            <div class="row">
+           
 
            
 
-          @*   @if (showModal)
-            {
-                <div class="modal  fade show" tabindex="-1" role="dialog" style="display: block;">
-                    <div class="modal-dialog modal-fullscreen" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title">An Introduction To Mindfulness</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close" @onclick="@(() => { showModal = false; })">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                               <p>Modal body text goes here.</p>
-                                <iframe style="    position: relative;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;" src="https://www.youtube.com/embed/NbizmVKHdgs?si=a9HSH_Qm-sr1UNqL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-                            </div>
-                            <div class="modal-footer">
-                               <button type="button" class="btn btn-primary">Save changes</button>
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            }
-            <hr />*@
-          
-
-
         
 
-          <div class="col-lg-12">
+        </div>
+        <div class="row">
             <p>
               We have all experienced mindfulness; for example, when we are focused on something we enjoy such as sewing, playing a sport we love or a walk on a beautiful summer day. It is when time seems to have no meaning and you are fully and completely engaged in the present moment. These conditions make us feel fully alive and whole, but at times of difficulty and external pressures we fail to find this more helpful state of mind. Instead, many of us harm ourselves by the way we think about the challenges we face. We spend time and energy worrying about what might happen in the future or ruminating over things that have happened in the past.
             </p>
@@ -90,12 +62,15 @@
                    
                     <Button class="play-btn mb-4 btn-learn-more" @onclick="@(() => { showModal = true; })">Learn More</Button>
             </p> *@
-
-                <p>
+        </div>
+       
+        <div class="row row-padded-override text-center yt-video">
+            <p>
                     <iframe style="position: relative;right: 0;bottom: 0;
     max-width:500px;width:95vw;aspect-ratio:3/2" src="https://www.youtube.com/embed/NbizmVKHdgs?si=a9HSH_Qm-sr1UNqL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </p>
-
+        </div>
+        <div class="row row-padded-override">
             <p>
                     The MBSR course offers a solution by gently encouraging us to live more often in the present moment. Mindfulness practice does not invalidate our worries or concerns, but rather it allows us to take a break from them.
             </p>
@@ -114,13 +89,7 @@
      
 
         </div>
-         
-          
-        </div>
-    </section><!-- End About Us Section -->
 
-<!-- ======= Faq Section ======= -->
-<section id="faq" class="faq text-dark">
     <div class="container">
 
         <div class="row">
@@ -132,63 +101,14 @@
                     <p class=""></p>
                 </div>
 
-                <div class="accordion-list text-dark">
-                    <ul>
-                        <li>
-                            <a data-bs-toggle="collapse" class="" data-bs-target="#accordion-list-1">Is Mindfulness just a fad? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></a>
-                            <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
-                                <p>
-                                    It is doubtful that mindfulness will disappear anytime soon. Mindfulness has been mocked, for example, in adult Ladybird books, but it has a large evidence base.
-
-                                    In the late 1990s, there was an increase in research into the effectiveness of MBSR courses. It has been shown to alleviate distress in those experiencing depression and anxiety. Participants in MBSR courses reported being better able to cope with and manage stress. (Biegel et al 2009; Beal et al 2012).
-                                </p>
-                            </div>
-                        </li>
-
-                        <li>
-                            <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2" class="collapsed">Is Mindfulness Buddhism?<i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></a>
-                            <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
-                                <p>
-                                    Mindfulness has its foundations in Buddhism, but the MBSR is a western secular course. It simply teaches meditation designed to allow us to become more aware of ourselves as human beings. It does not teach Buddhism and people from all faiths and cultures are welcome.
-                                </p>
-                            </div>
-                        </li>
-
-                        <li>
-                            <a data-bs-toggle="collapse" data-bs-target="#accordion-list-3" class="collapsed">What will an MBSR course do for me?<i class="bi bi-chevron-down icon-show"></i><i class="bi-chevron-up bi icon-close"></i></a>
-                            <div id="accordion-list-3" class="collapse" data-bs-parent=".accordion-list">
-                                <p>
-                                    The MBSR course should not be used as a substitute for medical care because it is not intended to treat or replace therapy or medical care. It seeks to be preventative and may be therapeutic for those who experience stress, common aches and pains, migraines, and other illnesses. Participants on MBSR courses have reported feeling more alive, and more "in-tune" with themselves and others.
-                                </p>
-                                <p>Through this MBSR course, you will learn skills that may increase your ability to:</p>
-                                <ul>
-                                    <li><i class="ri-check-double-line"></i> Cope with stress, pain, and the challenges of everyday life</li>
-                                    <li><i class="ri-check-double-line"></i> Deal with difficult events with grace and composure</li>
-                                    <li><i class="ri-check-double-line"></i> Be fully present and alive in this moment</li>
-                                </ul>
-                            </div>
-                        </li>
-
-                        <li>
-                            <a data-bs-toggle="collapse" data-bs-target="#accordion-list-4" class="collapsed">Can I practise at home?<i class="bi bi-chevron-down icon-show"></i><i class="bi-chevron-up bi icon-close"></i></a>
-                            <div id="accordion-list-4" class="collapse" data-bs-parent=".accordion-list">
-                                <p>
-                                    Mindfulness is like any other learning experience; unless it is practised on a regular basis it is unlikely to be beneficial. Home practice will be provided, but can be adapted to suit each person’s individual’s lifestyle. The homework is designed to be enjoyable.
-                                </p>
-                            </div>
-                        </li>
-
-                    </ul>
-                </div>
-
-                <div class="accordion" id="accordionExample">
+                <div class="accordion text-dark " id="accordionFAQ">
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingOne">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                 Is Mindfulness just a fad?
                             </button>
                         </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionFAQ">
                             <div class="accordion-body">
                                 <p>
                                     It is doubtful that mindfulness will disappear anytime soon. Mindfulness has been mocked, for example, in adult Ladybird books, but it has a large evidence base.
@@ -204,21 +124,45 @@
                                 Is Mindfulness Buddhism?
                             </button>
                         </h2>
-                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionFAQ">
                             <div class="accordion-body">
-                                <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                <p>
+                                    Mindfulness has its foundations in Buddhism, but the MBSR is a western secular course. It simply teaches meditation designed to allow us to become more aware of ourselves as human beings. It does not teach Buddhism and people from all faiths and cultures are welcome.
+                                </p>
                             </div>
                         </div>
                     </div>
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingThree">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                Accordion Item #3
+                                Can I practise at home?
                             </button>
                         </h2>
-                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionFAQ">
                             <div class="accordion-body">
-                                <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                <p>
+                                    Mindfulness is like any other learning experience; unless it is practised on a regular basis it is unlikely to be beneficial. Home practice will be provided, but can be adapted to suit each person’s individual’s lifestyle. The homework is designed to be enjoyable.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                What will an MBSR course do for me?
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionFAQ">
+                            <div class="accordion-body">
+                                <p>
+                                    The MBSR course should not be used as a substitute for medical care because it is not intended to treat or replace therapy or medical care. It seeks to be preventative and may be therapeutic for those who experience stress, common aches and pains, migraines, and other illnesses. Participants on MBSR courses have reported feeling more alive, and more "in-tune" with themselves and others.
+                                </p>
+                                <p>Through this MBSR course, you will learn skills that may increase your ability to:</p>
+                                <ul>
+                                    <li><i class="ri-check-double-line"></i> Cope with stress, pain, and the challenges of everyday life</li>
+                                    <li><i class="ri-check-double-line"></i> Deal with difficult events with grace and composure</li>
+                                    <li><i class="ri-check-double-line"></i> Be fully present and alive in this moment</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -231,15 +175,16 @@
 
     </div>
 
-  
-</section><!-- End Faq Section -->
+
+</section><!-- End WhatIsMindfulness Section -->
+
 
 <!-- ======= About Jean Section ======= -->
-<section id="aboutjean" class="about scrollspy-example" data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="0" tabindex="0" style="background-color:white">
+<section id="aboutjean" class="" data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="0" tabindex="0" style="background-color:white">
     <div class="container">
 
         <div class="section-title">
-            <h2>Dr Jean Carnochan : Personal Introduction</h2>          
+            <h2>Dr Jean Carnochan : Personal <strong>Introduction</strong></h2>
         </div>
 
         <div class="row content">
@@ -279,12 +224,11 @@
 </section><!-- End About Jean Section -->
 
 <!-- ======= Counts Section ======= -->
-<section id="counts" class="counts">
+@* <section id="counts" class="counts">
     <div class="container">
 
         <div class="text-center title">
-            <h3>Our story so far...</h3>
-            @*<p>Iusto et labore modi qui sapiente xpedita tempora et aut non ipsum consequatur illo.</p>*@
+            <h3>Our story so far...</h3>           
         </div>
 
         <div class="row counters position-relative">
@@ -312,10 +256,11 @@
         </div>
 
     </div>
-</section><!-- End Counts Section -->
+</section>  *@
+<!-- End Counts Section -->
 
-<a id="back-to-top" @onclick="GoToTop" class="btn btn-light btn-lg back-to-top" role="button"><i class="bi bi-chevron-up"></i></a>
-
+@* <a id="back-to-top" @onclick="GoToTop" class="btn btn-light btn-lg back-to-top" role="button"><i class="bi bi-chevron-up"></i></a>
+ *@
 
 @code {
 
