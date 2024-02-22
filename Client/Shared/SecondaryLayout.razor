@@ -102,6 +102,10 @@
     {
         Navigation.LocationChanged -= OnLocationChanged;
         Navigation.LocationChanged += OnLocationChanged;
+
+        landingPage = (Navigation.Uri == Navigation.BaseUri);
+
+
     }
 
     private async void OnLocationChanged(object sender, LocationChangedEventArgs e)

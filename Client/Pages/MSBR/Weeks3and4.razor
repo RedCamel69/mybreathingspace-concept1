@@ -8,106 +8,66 @@
 
 <PageTitle>MSBR Weeks 3 and 4</PageTitle>
 
-<!-- ======= WhatIsMindfulness Section ======= -->
+<!-- ======= Weeks3and4 Section ======= -->
 <section id="msbr-title" class="about " data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="0" tabindex="0" style="background-color:white; padding-top:130px">
     <div class="container">
 
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item"><a href="mbsr">MSBR</a></li>
+                <li class="breadcrumb-item"><a href="mbsr#weeks3and4">MSBR Overview</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Weeks 3 and 4</li>
             </ol>
         </nav>
 
         <div class="section-title">
-            <h2>The MBSR</h2>
+            <h1>The MBSR <strong>Weeks 3 and 4</strong></h1>
         </div>
-        <div class="row content">
-            <div class="col-lg-12">
-                <h3>Weeks 3 and 4</h3>
 
-
-
-                <MSBRWeek Id="week3"
-                          Title="3.Movement"
-                          SubHeading1="Mindfulness of the Breath and the Body in Movement"
-                          Intro="Week 3 is a 2.5 hour session in which we investigate several distinct yet interrelated formal mindfulness practices:"
-                          Objectives=@(new List<string>()
-                          {
-                          "Mindful hatha yoga (ending with a brief body scan).",
-                          "Sitting meditation.",
-                          "Walking meditation."
-                          })
-                          Intro2="This extended formal practice period is followed by inquiry into and exploration of participants’ experiences with in-class and assigned home practices. Typical topics include challenges and insights encountered in formal practice and in integrating mindfulness into everyday life."
-                          Objectives2=@null></MSBRWeek>
-
-                <MSBRWeek Id="week4"
-                          Title="4.Stress (i)"
-                          SubHeading1="Learning about our Patterns of Reactivity to Stress"
-                          Intro="Week 4 is a 2.5 hour session of participant engagement in a combination of the three major formal mindfulness practices that they have also been practising at home during the preceding three weeks. These include:"
-                          Objectives=@(new List<string>()
-                          {
-                          "Mindful hatha yoga.",
-                          "Sitting meditation.",
-                          "The body scan."
-                          })
-                          Intro2="In this class, a brief guided body scan will be completed before the start of the sitting practice. Instruction will emphasise the development of concentration, embodiment, the capacity to train and re-direct attention, and the systematic expansion of the field of awareness.The group will explore mindfulness as a means of recognising and reducing the negative effects of automatic, habitual stress reactivity."
-                          Objectives2=@null></MSBRWeek>
-
+        <div class="card text-bg-primary mb-3" style="">
+            <div class="card-header">
+                <h3>3.Movement</h3>
+                <h4><i>Mindfulness of the Breath and the Body in Movement</i></h4>
+                Week 3 is a 2.5 hour session in which we investigate several distinct yet interrelated formal mindfulness practices:
+            </div>
+            <div class="card-body">
+                <p class="card-text">
+                    <ul>
+                        <li>Mindful hatha yoga (ending with a brief body scan).</li>
+                        <li>Sitting meditation.</li>
+                        <li>Walking meditation.</li>
+                    </ul>
+                    This extended formal practice period is followed by inquiry into and exploration of participants’ experiences with in-class and assigned home practices. Typical topics include challenges and insights encountered in formal practice and in integrating mindfulness into everyday life.
+                </p>
             </div>
         </div>
+
+        <div class="card text-bg-primary mb-3" style="">
+            <div class="card-header">
+                <h3>4.Stress (i)</h3>
+                <h4><i>Learning about our Patterns of Reactivity to Stress</i></h4>
+                Week 4 is a 2.5 hour session of participant engagement in a combination of the three major formal mindfulness practices that they have also been practising at home during the preceding three weeks. These include:
+            </div>
+            <div class="card-body">
+                <p class="card-text">
+                    <ul>
+                        <li>Mindful hatha yoga.</li>
+                        <li>Sitting meditation.</li>
+                        <li>Walking meditation.</li>
+                    </ul>
+                    In this class, a brief guided body scan will be completed before the start of the sitting practice. Instruction will emphasise the development of concentration, embodiment, the capacity to train and re-direct attention, and the systematic expansion of the field of awareness.The group will explore mindfulness as a means of recognising and reducing the negative effects of automatic, habitual stress reactivity.
+                </p>
+            </div>
+        </div>
+       
+       
     </div>
-</section><!-- End About Us Section -->
+</section><!-- Weeks3and4 Section -->
+
 @code {
-
-    private IJSObjectReference? _jsModule;
-
-
-   
-
-    protected override async Task OnInitializedAsync()
-    {
-        _jsModule = await JS.InvokeAsync<IJSObjectReference>("import", "./js/main.js");
-
-        if (_jsModule != null)
-        {
-            AttachScrollListener();
-        }
-    }
-
-    async Task GoToTop()
-    {
-        await _jsModule.InvokeVoidAsync("ScrollToTop");
-    }
-
-    async Task AttachScrollListener()
-    {
-        //selfReference = DotNetObjectReference.Create(this);
-        var minInterval = 500; // Only notify every 500 ms
-        await _jsModule.InvokeVoidAsync("onContentPageScroll", minInterval);
-    }
-
-    protected override async Task OnAfterRenderAsync(bool firstRender)
-    {
-        if (firstRender)
-        {
-
-        }
-    }
 
     public void Dispose()
     {
 
-    }
-
-    private async Task OnShowModalClick()
-    {
-        //await modal?.ShowAsync();
-    }
-
-    private async Task OnHideModalClick()
-    {
-        //await modal?.HideAsync();
     }
 }
